@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .navbar {
+            background: #333;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .menu {
+            display: flex;
+            background: #eee;
+            padding: 10px;
+            justify-content: space-around;
+        }
+        .carousel {
+            width: 80%;
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+        .banner {
+            background: #ddd;
+            padding: 40px;
+            font-size: 18px;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .left { left: 10px; }
+        .right { right: 10px; }
+        .dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            margin: 5px;
+            background: #ccc;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .active {
+            background: black;
+        }
+        .content {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            text-align: left;
+        }
+        .buttons {
+            margin: 20px;
+        }
+        .buttons button {
+            padding: 10px;
+            border: 2px solid blue;
+            background: white;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">Nombre de la empresa</div>
+    <div class="menu">
+        <span>Inicio</span>
+        <span>Productos</span>
+        <span>Sobre nosotros</span>
+        <span>Log in</span>
+    </div>
+    <div class="carousel">
+        <span class="arrow left">&#9664;</span>
+        <div class="banner">Full Banner Ad - 468x60</div>
+        <span class="arrow right">&#9654;</span>
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    </div>
+    <div class="buttons">
+        <button>Cambiar Contenido</button>
+        <button>Cambiar Color de página</button>
+    </div>
+</body>
+</html>
