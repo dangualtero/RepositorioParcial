@@ -1,0 +1,119 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.contenido {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin-right: 15px;
+}
+
+
+.main-content {
+    display: flex;  
+    width: 100%;
+    gap: 2%;
+    padding: 10px;
+    align-items: flex-start;
+}
+
+
+.barraIz {
+    flex: 1;
+    min-width: 200px;
+    max-width: 25%;
+    padding: 10px;
+    border-right: 2px solid black;
+}
+
+.barraIz ul {
+    list-style: none;
+    padding: 0;
+}
+
+.barraIz ul li {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+
+.contenidoP {
+    flex: 3;
+    min-width: 300px;
+    max-width: 70%;
+    padding: 10px;
+}
+
+
+.productoP {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.producto {
+    border: 1px solid black;
+    padding: 10px;
+    flex: 1;
+    min-width: 45%;
+    max-width: 48%;
+    text-align: center;
+}
+
+
+.footer {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background: #000;
+    color: white;
+    margin-top: 20px;
+}
+
+
+.imagen,
+.imagenG {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+}
+
+.barraP {
+    border: 1px solid #000;
+    text-align: center;
+}
+
