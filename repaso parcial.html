@@ -3,108 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mockup</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        .navbar {
-            background: #333;
-            color: white;
-            padding: 10px;
-            font-weight: bold;
-        }
-        .menu {
-            display: flex;
-            background: #eee;
-            padding: 10px;
-            justify-content: space-around;
-        }
-        .carousel {
-            width: 80%;
-            margin: 20px auto;
-            padding: 10px;
-            border: 1px solid #ccc;
-            position: relative;
-        }
-        .banner {
-            background: #ddd;
-            padding: 40px;
-            font-size: 18px;
-        }
-        .arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px;
-            cursor: pointer;
-        }
-        .left { left: 10px; }
-        .right { right: 10px; }
-        .dots {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-        .dot {
-            width: 12px;
-            height: 12px;
-            margin: 5px;
-            background: #ccc;
-            border-radius: 50%;
-            display: inline-block;
-        }
-        .active {
-            background: black;
-        }
-        .content {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-            text-align: left;
-        }
-        .buttons {
-            margin: 20px;
-        }
-        .buttons button {
-            padding: 10px;
-            border: 2px solid blue;
-            background: white;
-            cursor: pointer;
-            margin: 5px;
-        }
-    </style>
+    <title>Mi Tienda Virtual</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estiloParcial.css">
+    <script src="logica.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <div class="navbar">Nombre de la empresa</div>
-    <div class="menu">
-        <span>Inicio</span>
-        <span>Productos</span>
-        <span>Sobre nosotros</span>
-        <span>Log in</span>
-    </div>
-    <div class="carousel">
-        <span class="arrow left">&#9664;</span>
-        <div class="banner">Full Banner Ad - 468x60</div>
-        <span class="arrow right">&#9654;</span>
-        <div class="dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="showSection('inicio')">Mi Tienda</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('inicio')">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('productos')">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('sobreNosotros')">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('login')">Log In</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-    </div>
-    <div class="buttons">
-        <button>Cambiar Contenido</button>
-        <button>Cambiar Color de página</button>
-    </div>
+    </nav>
+
+    <!-- SECCIÓN INICIO -->
+    <section id="inicio" class="section">
+        <!-- Banner con carrusel -->
+        <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="4"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/api/placeholder/1200/300" class="d-block w-100 banner-img" alt="Banner 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="/api/placeholder/1200/300" class="d-block w-100 banner-img" alt="Banner 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="/api/placeholder/1200/300" class="d-block w-100 banner-img" alt="Banner 3">
+                </div>
+                <div class="carousel-item">
+                    <img src="/api/placeholder/1200/300" class="d-block w-100 banner-img" alt="Banner 4">
+                </div>
+                <div class="carousel-item">
+                    <img src="/api/placeholder/1200/300" class="d-block w-100 banner-img" alt="Banner 5">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <!-- Contenido de texto y botones -->
+        <div class="container mt-4 mb-5">
+            <div id="contenidoTexto">
+                <h2>Bienvenido a nuestra Tienda</h2>
+                <p>Somos una tienda virtual con los mejores productos tecnológicos. Ofrecemos precios increíbles y envíos a todo el país.</p>
+                <p>¡Explora nuestro catálogo y encuentra lo que necesitas!</p>
+            </div>
+            <div class="mt-3">
+                <button class="btn btn-primary" onclick="cambiarContenido()">Cambiar Contenido</button>
+                <button class="btn btn-secondary" onclick="cambiarColor()">Cambiar Color de la Página</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PRODUCTOS -->
+    <section id="productos" class="section" style="display: none;">
+        <div class="container mt-4">
+            <h2 class="text-center mb-4">Nuestros Productos</h2>
+            <div class="row">
+                <!-- Producto 1 -->
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <img src="/api/placeholder/300/200" class="card-img-top" alt="Producto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Smartphone XYZ</h5>
+                            <p class="card-text">Smartphone de última generación con cámara de alta definición.</p>
+                            <a href="#" class="btn btn-primary" onclick="showSection('login')">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Producto 2 -->
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <img src="/api/placeholder/300/200" class="card-img-top" alt="Producto 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Laptop Pro</h5>
+                            <p class="card-text">Laptop ultradelgada con procesador potente para profesionales.</p>
+                            <a href="#" class="btn btn-primary" onclick="showSection('login')">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Producto 3 -->
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <img src="/api/placeholder/300/200" class="card-img-top" alt="Producto 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Smartwatch Elite</h5>
+                            <p class="card-text">Reloj inteligente con monitoreo de salud y notificaciones.</p>
+                            <a href="#" class="btn btn-primary" onclick="showSection('login')">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Producto 4 -->
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <img src="/api/placeholder/300/200" class="card-img-top" alt="Producto 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Auriculares</h5>
+                            <p class="card-text">Auriculares inalámbricos con cancelación de ruido.</p>
+                            <a href="#" class="btn btn-primary" onclick="showSection('login')">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN SOBRE NOSOTROS -->
+    <section id="sobreNosotros" class="section" style="display: none;">
+        <div class="container mt-4">
+            <h2 class="text-center mb-4">Sobre Nosotros</h2>
+            
+            <!-- Acordeón Bootstrap -->
+            <div class="accordion" id="infoAccordion">
+                <!-- Datos de la empresa -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                            Nuestra Empresa
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#infoAccordion">
+                        <div class="accordion-body">
+                            <p>Mi Tienda fue fundada en 2020 con la visión de ofrecer productos tecnológicos de calidad a precios accesibles.</p>
+                            <p>Contamos con un equipo de expertos apasionados por la tecnología y el servicio al cliente.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Misión -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                            Nuestra Misión
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
+                        <div class="accordion-body">
+                            <p>Nuestra misión es proporcionar productos tecnológicos de alta calidad a precios competitivos, con un servicio excepcional.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Visión -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                            Nuestra Visión
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#infoAccordion">
+                        <div class="accordion-body">
+                            <p>Aspiramos a ser reconocidos como el destino principal para compras tecnológicas en línea, destacándonos por nuestra excelencia en servicio al cliente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Equipo -->
+            <h3 class="text-center mt-4 mb-4">Nuestro Equipo</h3>
+            <div class="row">
+                <!-- Miembro 1 -->
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="/api/placeholder/150/150" class="team-img" alt="Miembro 1">
+                        <h4>Carlos Rodríguez</h4>
+                        <p>CEO & Fundador</p>
+                        <div class="social-icons">
+                            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Miembro 2 -->
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="/api/placeholder/150/150" class="team-img" alt="Miembro 2">
+                        <h4>Laura Martínez</h4>
+                        <p>Directora de Tecnología</p>
+                        <div class="social-icons">
+                            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Miembro 3 -->
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="/api/placeholder/150/150" class="team-img" alt="Miembro 3">
+                        <h4>Ana González</h4>
+                        <p>Gerente de Ventas</p>
+                        <div class="social-icons">
+                            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN LOGIN -->
+    <section id="login" class="section" style="display: none;">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="text-center mb-4">Iniciar Sesión</h2>
+                <form id="loginForm">
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" required>
+                    </div>
+                    <!-- Contraseña -->
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="loginPassword" required>
+                    </div>
+                    <!-- Botones -->
+                    <div class="d-grid gap-2">
+                        <button type="button" class="btn btn-primary" onclick="iniciarSesion()">Log In</button>
+                        <button type="button" class="btn btn-success" onclick="showSection('registro')">Sign Up</button>
+                        <button type="button" class="btn btn-secondary" onclick="showSection('inicio')">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN REGISTRO -->
+    <section id="registro" class="section" style="display: none;">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="text-center mb-4">Registro de Usuario</h2>
+                <form id="registroForm">
+                    <!-- Nombre -->
+                    <div class="mb-3">
+                        <label for="registroNombre" class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" id="registroNombre" required>
+                        <div id="errorNombre" class="error-message">Por favor ingrese un nombre válido</div>
+                    </div>
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="registroEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="registroEmail" required>
+                        <div id="errorEmail" class="error-message">Por favor ingrese un email válido</div>
+                    </div>
+                    <!-- Teléfono -->
+                    <div class="mb-3">
+                        <label for="registroTelefono" class="form-label">Teléfono</label>
+                        <input type="tel" class="form-control" id="registroTelefono" required>
+                        <div id="errorTelefono" class="error-message">Por favor ingrese un teléfono válido (10 dígitos)</div>
+                    </div>
+                    <!-- Contraseña -->
+                    <div class="mb-3">
+                        <label for="registroPassword" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="registroPassword" required>
+                        <div id="errorPassword" class="error-message">La contraseña debe tener al menos 8 caracteres</div>
+                    </div>
+                    <!-- Confirmar Contraseña -->
+                    <div class="mb-3">
+                        <label for="registroConfirmarPassword" class="form-label">Confirmar Contraseña</label>
+                        <input type="password" class="form-control" id="registroConfirmarPassword" required>
+                        <div id="errorConfirmarPassword" class="error-message">Las contraseñas no coinciden</div>
+                    </div>
+                    <!-- Botones -->
+                    <div class="d-grid gap-2">
+                        <button type="button" class="btn btn-success" onclick="registrarUsuario()">Registrar</button>
+                        <button type="button" class="btn btn-secondary" onclick="showSection('login')">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
