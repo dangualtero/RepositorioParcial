@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portal de Noticias</title>
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-right: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        .search-container {
+            display: flex;
+        }
+        
+        .search-container input {
+            padding: 5px;
+            border: none;
+            border-radius: 3px 0 0 3px;
+        }
+        
+        .search-container button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 0 3px 3px 0;
+            cursor: pointer;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Estilos para noticias */
+        .news-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .news-item {
+            width: 30%;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .news-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 15px;
+        }
+        
+        .news-content h3 {
+            margin-top: 0;
+        }
+        
+        .news-content button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        /* Tabla de enlaces */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        /* Estilos para formularios */
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .button-group button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        .primary-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .secondary-btn {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        
+        /* Estilos para About */
+        .accordion {
+            margin-bottom: 20px;
+        }
+        
+        .accordion-item {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        
+        .accordion-header {
+            background-color: #f2f2f2;
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        .accordion-content {
+            padding: 15px;
+            display: none;
+        }
+        
+        .accordion-content.active {
+            display: block;
+        }
+        
+        .text-container {
+            margin: 20px 0;
+        }
+        
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .slide img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        
+        .social-icons {
+            margin-top: 15px;
+        }
+        
+        .social-icons a {
+            margin: 0 10px;
+            font-size: 24px;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .slider-nav {
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .slider-nav button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Noticias</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar...">
+                <button onclick="search()">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Página principal (Noticias) -->
+    <div id="noticias" class="container">
+        <h1>Noticias Destacadas</h1>
+        <div class="news-container">
+            <div class="news-item">
+                <img src="https://via.placeholder.com/400x200" alt="Noticia 1">
+                <div class="news-content">
+                    <h3>Nueva vacuna contra COVID-19</h3>
+                    <p>Científicos han desarrollado una nueva vacuna que promete mayor eficacia contra las variantes recientes.</p>
+                    <button onclick="window.location.href='https://www.who.int'">Leer más</button>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="https://via.placeholder.com/400x200" alt="Noticia 2">
+                <div class="news-content">
+                    <h3>Avances en energía renovable</h3>
+                    <p>Un nuevo proyecto de energía solar podría suministrar electricidad a millones de hogares en los próximos años.</p>
+                    <button onclick="window.location.href='https://www.nytimes.com'">Leer más</button>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="https://via.placeholder.com/400x200" alt="Noticia 3">
+                <div class="news-content">
+                    <h3>Descubrimiento arqueológico</h3>
+                    <p>Arqueólogos han encontrado restos de una antigua civilización que podría reescribir la historia.</p>
+                    <button onclick="window.location.href='https://www.bbc.com'">Leer más</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Enlaces a portales de noticias</h2>
+        <table>
+            <tr>
+                <th>Nacionales</th>
+                <th>Internacionales</th>
+            </tr>
+            <tr>
+                <td><a href="https://www.eltiempo.com">El Tiempo</a></td>
+                <td><a href="https://www.bbc.com">BBC News</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.elespectador.com">El Espectador</a></td>
+                <td><a href="https://www.cnn.com">CNN</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.semana.com">Semana</a></td>
+                <td><a href="https://www.nytimes.com">The New York Times</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.caracoltv.com/noticias">Caracol Noticias</a></td>
+                <td><a href="https://www.theguardian.com">The Guardian</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Página Admin (Inicio de sesión) -->
+    <div id="admin" class="container" style="display: none;">
+        <div class="form-container">
+            <h2>Iniciar Sesión</h2>
+            <div class="form-group">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="button-group">
+                <button class="primary-btn" onclick="login()">Log In</button>
+                <button class="primary-btn" onclick="showSignup()">Sign Up</button>
+                <button class="secondary-btn" onclick="showNoticias()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página Sign Up (Registro) -->
+    <div id="signup" class="container" style="display: none;">
+        <div class="form-container">
+            <h2>Registro de Usuario</h2>
+            <div class="form-group">
+                <label for="fullname">Nombre completo:</label>
+                <input type="text" id="fullname" name="fullname">
+            </div>
+            <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="newUsername">Usuario:</label>
+                <input type="text" id="newUsername" name="newUsername">
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Contraseña:</label>
+                <input type="password" id="newPassword" name="newPassword">
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirmar contraseña:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword">
+            </div>
+            <div class="button-group">
+                <button class="primary-btn" onclick="register()">Registrar</button>
+                <button class="secondary-btn" onclick="showAdmin()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página About (Información) -->
+    <div id="about" class="container" style="display: none;">
+        <h1>Acerca de Nosotros</h1>
+        
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(0)">Misión</div>
+                <div class="accordion-content">
+                    <h3>Nuestra Misión</h3>
+                    <p>Proporcionar información veraz, objetiva y oportuna a nuestros lectores, fomentando el pensamiento crítico y el análisis profundo de los acontecimientos nacionales e internacionales.</p>
+                    <p>Nos comprometemos a ser un medio de comunicación que contribuya al fortalecimiento de la democracia y la libertad de expresión.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(1)">Visión</div>
+                <div class="accordion-content">
+                    <h3>Nuestra Visión</h3>
+                    <p>Ser reconocidos como un referente informativo de confianza, líder en la entrega de contenidos periodísticos de calidad, innovadores en formatos digitales y comprometidos con los más altos estándares éticos.</p>
+                    <p>Aspiramos a expandir nuestra presencia digital y ser la primera opción para quienes buscan información confiable y análisis profundo de la realidad.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(2)">Equipo de trabajo</div>
+                <div class="accordion-content">
+                    <div class="slider-container">
+                        <div class="slider" id="slider">
+                            <div class="slide">
+                                <img src="https://via.placeholder.com/150" alt="Empleado 1">
+                                <h3>Ana García</h3>
+                                <p>Directora Editorial</p>
+                                <p>Periodista con más de 15 años de experiencia en medios digitales. Especialista en política internacional.</p>
+                                <div class="social-icons">
+                                    <a href="https://facebook.com" target="_blank">FB</a>
+                                    <a href="https://twitter.com" target="_blank">TW</a>
+                                    <a href="https://linkedin.com" target="_blank">LI</a>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <img src="https://via.placeholder.com/150" alt="Empleado 2">
+                                <h3>Carlos Martínez</h3>
+                                <p>Editor en Jefe</p>
+                                <p>Licenciado en comunicación social con especialización en periodismo digital. Experto en coberturas de eventos culturales.</p>
+                                <div class="social-icons">
+                                    <a href="https://facebook.com" target="_blank">FB</a>
+                                    <a href="https://twitter.com" target="_blank">TW</a>
+                                    <a href="https://linkedin.com" target="_blank">LI</a>
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <img src="https://via.placeholder.com/150" alt="Empleado 3">
+                                <h3>Laura Rodríguez</h3>
+                                <p>Periodista de Investigación</p>
+                                <p>Máster en periodismo de investigación. Ha recibido varios premios por sus reportajes sobre corrupción y derechos humanos.</p>
+                                <div class="social-icons">
+                                    <a href="https://facebook.com" target="_blank">FB</a>
+                                    <a href="https://twitter.com" target="_blank">TW</a>
+                                    <a href="https://linkedin.com" target="_blank">LI</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-nav">
+                            <button onclick="prevSlide()">Anterior</button>
+                            <button onclick="nextSlide()">Siguiente</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-container">
+            <h3>Nuestros Valores</h3>
+            <p id="about-text">En nuestro portal de noticias, nos guiamos por valores fundamentales como la verdad, la objetividad, la justicia y el respeto. Creemos firmemente en el derecho de las personas a estar informadas de manera veraz y oportuna. Nuestro compromiso es brindar contenido de calidad que contribuya al debate público y al fortalecimiento de la democracia.</p>
+            <div class="button-group">
+                <button class="primary-btn" onclick="cambiarTamano()">Cambiar tamaño de letra</button>
+                <button class="primary-btn" onclick="cambiarColor()">Cambiar color de letra</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Variables globales
+        let currentPage = "noticias";
+        let activeAccordion = -1;
+        let currentSlide = 0;
+        let fontSizeIndex = 0;
+        const fontSizes = ["16px", "18px", "20px", "14px"];
+        const colors = ["#000000", "#0000FF", "#FF0000", "#006400"];
+        let colorIndex = 0;
+        
+        // Función para mostrar la página actual
+        function showPage(page) {
+            // Ocultar todas las páginas
+            document.getElementById("noticias").style.display = "none";
+            document.getElementById("admin").style.display = "none";
+            document.getElementById("signup").style.display = "none";
+            document.getElementById("about").style.display = "none";
+            
+            // Mostrar la página seleccionada
+            document.getElementById(page).style.display = "block";
+            currentPage = page;
+        }
+        
+        // Funciones para navegación
+        function showNoticias() {
+            showPage("noticias");
+        }
+        
+        function showAdmin() {
+            showPage("admin");
+        }
+        
+        function showSignup() {
+            showPage("signup");
+        }
+        
+        function showAbout() {
+            showPage("about");
+        }
+        
+        // Funciones para formularios
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            
+            console.log("Inicio de sesión:");
+            console.log("Usuario:", username);
+            console.log("Contraseña:", password);
+        }
+        
+        function register() {
+            const fullname = document.getElementById("fullname").value;
+            const email = document.getElementById("email").value;
+            const username = document.getElementById("newUsername").value;
+            const password = document.getElementById("newPassword").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
+            
+            // Validaciones con expresiones regulares
+            const nameRegex = /^[a-zA-Z\s]{3,50}$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const usernameRegex = /^[a-zA-Z0-9]{4,15}$/;
+            const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+            
+            if (!nameRegex.test(fullname)) {
+                alert("El nombre debe contener solo letras y espacios (3-50 caracteres)");
+                return;
+            }
+            
+            if (!emailRegex.test(email)) {
+                alert("Formato de correo electrónico inválido");
+                return;
+            }
+            
+            if (!usernameRegex.test(username)) {
+                alert("El usuario debe tener entre 4 y 15 caracteres (letras y números)");
+                return;
+            }
+            
+            if (!passwordRegex.test(password)) {
+                alert("La contraseña debe tener al menos 8 caracteres, incluyendo letras y números");
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                alert("Las contraseñas no coinciden");
+                return;
+            }
+            
+            // Mostrar información por alert
+            alert(`Registro exitoso:\nNombre: ${fullname}\nEmail: ${email}\nUsuario: ${username}`);
+        }
+        
+        // Función para búsqueda
+        function search() {
+            const searchTerm = document.getElementById("searchInput").value;
+            console.log("Búsqueda:", searchTerm);
+        }
+        
+        // Funciones para acordeón
+        function toggleAccordion(index) {
+            const accordionContents = document.querySelectorAll(".accordion-content");
+            
+            if (activeAccordion === index) {
+                accordionContents[index].classList.remove("active");
+                activeAccordion = -1;
+            } else {
+                if (activeAccordion !== -1) {
+                    accordionContents[activeAccordion].classList.remove("active");
+                }
+                accordionContents[index].classList.add("active");
+                activeAccordion = index;
+            }
+        }
+        
+        // Funciones para slider
+        function updateSlider() {
+            const slider = document.getElementById("slider");
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+        
+        function nextSlide() {
+            const slides = document.querySelectorAll(".slide");
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlider();
+        }
+        
+        function prevSlide() {
+            const slides = document.querySelectorAll(".slide");
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlider();
+        }
+        
+        // Funciones para cambiar texto
+        function cambiarTamano() {
+            fontSizeIndex = (fontSizeIndex + 1) % fontSizes.length;
+            document.getElementById("about-text").style.fontSize = fontSizes[fontSizeIndex];
+        }
+        
+        function cambiarColor() {
+            colorIndex = (colorIndex + 1) % colors.length;
+            document.getElementById("about-text").style.color = colors[colorIndex];
+        }
+        
+        // Código para cargar la página correcta según la URL
+        window.onload = function() {
+            const path = window.location.pathname;
+            if (path.includes("admin.html")) {
+                showAdmin();
+            } else if (path.includes("about.html")) {
+                showAbout();
+            } else {
+                showNoticias();
+            }
+        };
+    </script>
+</body>
+</html>

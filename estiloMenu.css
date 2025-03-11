@@ -1,0 +1,365 @@
+/* Quitamos los márgenes y los espacios extra */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo del fondo de la página */
+body {
+    background-color: #f4f4f4; /* Color gris claro */
+    color: #333; /* Color de texto oscuro */
+}
+
+/* Estilo de la barra de navegación */
+header {
+    background-color:  #333; /* Fondo negro */
+    padding: 15px; /* Espaciado alrededor */
+    width: 100%; /* Ocupar todo el ancho */
+    position: fixed; /* Fijar arriba */
+    top: 0;
+    left: 0;
+}
+
+/* Contenedor del menú */
+.menu {
+    display: flex; /* Poner los elementos en fila */
+    justify-content: space-between; /* Separar logo y enlaces */
+    align-items: center; /* Centrar verticalmente */
+    max-width: 1000px; /* Ancho máximo */
+    margin: auto; /* Centrar en la pantalla */
+}
+
+/* Estilo del logo */
+.logo {
+    color: white; /* Texto blanco */
+    font-size: 24px; /* Tamaño grande */
+    font-weight: bold; /* Negrita */
+    text-decoration: none; /* Quitar subrayado */
+}
+
+/* Estilo de la lista de navegación */
+.navegacion ul {
+    list-style: none; /* Quitar los puntos de la lista */
+    display: flex; /* Mostrar en fila */
+}
+
+/* Estilo de cada enlace */
+.navegacion ul li {
+    margin-left: 20px; /* Espacio entre enlaces */
+}
+
+/* Enlaces de navegación */
+.navegacion ul li a {
+    text-decoration: none; /* Quitar subrayado */
+    color: white; /* Texto blanco */
+    font-size: 18px; /* Tamaño del texto */
+    padding: 10px; /* Espaciado interno */
+    transition: 0.3s; /* Suavizar cambios de color */
+}
+
+/* Efecto cuando el mouse pasa por un enlace */
+.navegacion ul li a:hover {
+    background-color: orange; /* Fondo naranja */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Ocultamos el checkbox y la imagen del menú, ya que no los usaremos */
+input[type="checkbox"], .imagen-menu {
+    display: none;
+}
+
+/* Estilo del título */
+h1 {
+    margin-top: 100px; /* Separación del menú */
+    text-align: center; /* Centrar texto */
+    font-size: 36px; /* Tamaño grande */
+}
+.news {
+    width: 32%;
+    float: left;
+    margin-right: 1%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0 0 5px #ccc;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.news img {
+    width: 100%;
+    height: 150px;
+}
+
+.news-link {
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+.listas {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.otras {
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.columns {
+    display: flex;
+    margin-top: 20px;
+}
+.column {
+    width: 50%;
+}
+.column-title {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+.media-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.media-item {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+}
+.media-item:last-child {
+    border-bottom: none;
+}
+encabezado {
+            background-color: #4287f5;
+            padding: 10px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .navegacion {
+            background-color: #333;
+            overflow: hidden;
+        }
+        
+        .navegacion a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        .navegacion a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        
+        .busqueda {
+            float: right;
+            padding: 10px;
+        }
+        
+        .contenedor {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        
+        .formularioLogin {
+            padding: 20px;
+        }
+        
+        .campoInput {
+            margin-bottom: 15px;
+        }
+        
+        .campoInput label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .campoInput input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .botones {
+            margin-top: 20px;
+        }
+        
+        .boton {
+            padding: 10px 15px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .botonLogin {
+            background-color: #4287f5;
+            color: white;
+        }
+        
+        .botonSignup {
+            background-color: #42b72a;
+            color: white;
+        }
+        
+        .botonCancelar {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .pie {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .contenedor-admin{
+            max-width: 500px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            margin: 10% auto;
+        }
+        
+        .formularioLogin {
+            padding: 20px;
+        }
+        
+        .campoInput {
+            margin-bottom: 15px;
+        }
+        
+        .campoInput label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .campoInput input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .botones {
+            margin-top: 20px;
+        }
+        
+        .boton {
+            padding: 10px 15px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .botonLogin {
+            background-color: #4287f5;
+            color: white;
+        }
+        
+        .botonSignup {
+            background-color: #42b72a;
+            color: white;
+        }
+        
+        .botonCancelar {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .pie {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .display {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        
+        .formularioRegistro {
+            padding: 20px;
+        }
+        
+        .campoInput {
+            margin-bottom: 15px;
+        }
+        
+        .campoInput label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .campoInput input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .campoInput .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .botones {
+            margin-top: 20px;
+        }
+        
+        .boton {
+            padding: 10px 15px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .botonRegistrar {
+            background-color: #42b72a;
+            color: white;
+        }
+        
+        .botonCancelar {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .pie {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+
+

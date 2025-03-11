@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <link rel="stylesheet" href="estiloMenu.css">
+    <script src="logicaMenu.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    
+    <header>
+        <div class="content">
+            <div class="menu container">
+                <a href="menus.html" class="logo">logo</a>
+                <input type="checkbox" id="menu">
+                <label for="menu">
+                    <img src="X-NEGRA.jpg" class="imagen-menu" alt="">
+                </label>
+                <nav class="navegacion">
+                    <ul>
+                        <li>
+                            <a href="menus.html">Noticias</a>
+                            <a href="servicios.html">Admin</a>
+                            <a href="productos.html">Sign Up</a>
+                            <a href="contactenos.html">About</a>
+                        </li>
+                        <li>
+                            <div class="search-container">
+                                <input type="text" id="searchInput" placeholder="Buscar...">
+                                <button onclick="search()">Search</button>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="noticias" class="container">
+        <h1>Noticias Destacadas</h1>
+        <div class="news-container">
+            <div class="news img">
+                <div class="news-content">
+                    <h3 class="titulo noticia">El PAE en Neiva: futuro incierto</h3>
+                    <p>32 mil estudiantes de instituciones públicas de Neiva siguen a la espera de la alimentación complementaria que, según el alcalde German Casagua, se garantizaría desde el día uno. </p>
+                    <img src="PAE.jpeg" alt="Noticia 1">
+                    <button onclick="window.location.href='https:www.lanacion.com.co/el-pae-en-neiva-futuro-incierto'">Leer completa</button>
+                </div>
+            </div>
+            <div class="news img">
+                <div class="news-content">
+                    <h3 class="titulo noticia">Salud papa Francisco</h3>
+                    <p>Vaticano entrega reporte del papa Francisco tras mostrar mejoría en su salud: 'Sigue siendo compleja'</p>
+                    <img src="papa francisco.jpeg" alt="Noticia 2">
+                    <button onclick="window.location.href='https:www.eltiempo.com/mundo/europa/vaticano-entrega-reporte-del-papa-francisco-tras-mostrar-mejoria-en-su-salud-sigue-siendo-compleja-3434227'">Leer completa</button>
+                </div>
+            </div>
+            <div class="news img">
+                <div class="news-content">
+                    <h3 class="titulo-noticia">Robo de US$1.500 millones a una empresa</h3>                  
+                      <p>Hackers realizan "el mayor robo en la historia de las criptomonedas" al sustraer US$1.500 millones de la empresa global Bybit</p>
+                      <img src="noticia hacker.jpg.webp" alt="Noticia 3">
+                    <button onclick="window.location.href='https:www.bbc.com/mundo/articles/c78e947586eo'">Leer completa</button>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="lista">
+            <h2 class="otras">Otras páginas</h2>
+            
+            <div class="columns">
+                <div class="column">
+                    <div class="column-title">Nacionales</div>
+                    <ul class="media-list">
+                        <li class="media-item"><a href="https://www.eltiempo.com" class="media-link">El Tiempo</a></li>
+                        <li class="media-item"><a href="https://www.elespectador.com" class="media-link">El Espectador</a></li>
+                        <li class="media-item"><a href="https://www.semana.com" class="media-link">Semana</a></li>
+                        <li class="media-item"><a href="https://www.caracoltv.com/noticias" class="media-link">Caracol Noticias</a></li>
+                    </ul>
+                </div>
+                
+                <div class="column">
+                    <div class="column-title">Internacionales</div>
+                    <ul class="media-list">
+                        <li class="media-item"><a href="https://www.bbc.com" class="media-link">BBC News</a></li>
+                        <li class="media-item"><a href="https://www.cnn.com" class="media-link">CNN</a></li>
+                        <li class="media-item"><a href="https://www.nytimes.com" class="media-link">The New York Times</a></li>
+                        <li class="media-item"><a href="https://www.theguardian.com" class="media-link">The Guardian</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>
